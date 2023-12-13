@@ -13,16 +13,11 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const savedQuestionIndex = localStorage.getItem('currentQuestionIndex');
-  
   quizData.currentQuestionIndex = savedQuestionIndex ? parseInt(savedQuestionIndex, 10) : 0;
 
   const currentQuestion =  quizData.questions[quizData.currentQuestionIndex];
   localStorage.setItem('currentQuestion', JSON.stringify(currentQuestion));
   const questionElement = createQuestionElement(currentQuestion.text);
-
-
-
-
   
   userInterface.appendChild(questionElement);
 
@@ -31,61 +26,56 @@ export const initQuestionPage = () => {
   answersListElement.innerHTML = '';
   const answers = currentQuestion.answers;
 
-  // Function to handle answer selection
-  const selectAnswer = (questionIndex, selectedOption, chosenItem) => {
-    // Update the selected answer in the quizData object
-    quizData.questions[questionIndex].selected = selectedOption;
-    let selectedValue = (quizData.questions[questionIndex].selected =
-      selectedOption);
-
-    let correctAnswer = quizData.questions[questionIndex].correct;
-
-    document.querySelectorAll(`.answer-list li`).forEach((item) => {
-      if (item.innerText.split(': ')[0] == correctAnswer) {
-        item.style.background = 'green';
-      } else {
-        item.style.background = 'red';
-      }
-    });
-  };
-
   for (const [option, answer] of Object.entries(answers)) {
     const answerElement = createAnswerElement(option, answer);
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', (e) => {
       const selectedOption = e.target.innerText.split(': ')[0];
-      const chosenItem = e.target;
-      selectAnswer(quizData.currentQuestionIndex, selectedOption, chosenItem);
+      selectAnswer(quizData.currentQuestionIndex, selectedOption);
     });
-  }
+  };
 
   const quizBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
-  quizBtn.addEventListener('click', nextQuiz);
+  quizBtn.addEventListener('click', nextQuestion);
     score();
-
 };
 
-// const showCorrectAnswer = () => {
-//   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-//   const correctAnswer = currentQuestion.correct;
-//   const selectedAnswer = currentQuestion.selected;
 
-//   const p = document.createElement('p');
-//   p.innerText = `Correct answer is: ${correctAnswer}`;
-//   const answerList = document.getElementById(ANSWERS_LIST_ID);
+// USER CAN SELECT ONE ANSWER PER QUESTION
+const selectAnswer = (questionIndex, selectedOption) => {
+  // Update the selected answer in the quizData object
+  quizData.questions[questionIndex].selected = selectedOption;
 
-//   if(selectedAnswer != null && selectedAnswer.length > 0) {
-//     answerList.appendChild(p);
-//   };
-// };
+  document.querySelectorAll(`.answer-list li`).forEach((item) => {
+    showCorrectAnswer(item);
+  });
+};
 
-const nextQuiz = () => {
- 
+
+// USER CAN SEE CORRECT ANSWER WHEN SELECTING WRONG ANSWER
+const showCorrectAnswer = (item) => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex]; // retrieves current question by its index
+  const correctAnswer = currentQuestion.correct;
+  const selectedAnswer = currentQuestion.selected;
+  const choice = item.innerText.split(': ')[0]; // extracts user's choice from item parameter
+
+  if (selectedAnswer != null && selectedAnswer.length > 0 && choice == correctAnswer) { // splits text into array of substrings then selects first element at index 0 in the array
+    item.style.background = 'green'; 
+  } 
+  
+  if (selectedAnswer === choice && selectedAnswer !== correctAnswer) {
+    item.style.background = 'red';
+  };
+};
+
+
+const nextQuestion = () => {
+
   if(quizData.currentQuestionIndex == quizData.questions.length - 1){
     quizData.currentQuestionIndex = 0
     localStorage.setItem('currentQuestionIndex', quizData.currentQuestionIndex);
     initQuestionPage();
-  }else{
+  } else {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   localStorage.setItem('currentQuestionIndex', quizData.currentQuestionIndex);
  
@@ -112,11 +102,6 @@ export const score = () =>{
   const scoreElement = createScoreElement(numericScore, topScore);
 
   // Clear the user interface before appending the score element
-
   userInterface.appendChild(scoreElement);
-
-  
-  
-}
-;
+};
 

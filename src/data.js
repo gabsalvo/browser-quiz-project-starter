@@ -14,220 +14,172 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'What is the most spoken language in the world?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Spanish',
+        b: 'Arabic',
+        c: 'English',
+        d: 'Chinese'
       },
       correct: 'c',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'Most spoken language',
+          href: 'https://www.babbel.com/en/magazine/the-10-most-spoken-languages-in-the-world',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'How many minutes are in a full week?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
-      ],
-    },
-    {
-      text: 'Who painted the Mona Lisa?',
-      answers: {
-        a: 'Vincent van Gogh',
-        b: 'Leonardo da Vinci',
-        c: 'Pablo Picasso',
-        d: 'Michelangelo',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Louvre',
-          href: 'https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana',
-        },
-        {
-          text: 'Louvre',
-          href:
-            'https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana',
-        },
-      ],
-    },
-    {
-      text: 'What is the currency of Japan?',
-      answers: {
-        a: 'Won',
-        b: 'Yen',
-        c: 'Euro',
-        d: 'Dollar',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Wikipedia',
-          href: 'https://en.wikipedia.org/wiki/Japanese_yen',
-        },
-        {
-          text: 'Wikipedia',
-          href:
-            'https://en.wikipedia.org/wiki/Japanese_yen',
-        },
-      ],
-    },
-    {
-      text: 'What is the largest planet in our solar system?',
-      answers: {
-        a: 'Earth',
-        b: 'Jupiter',
-        c: 'Mars',
-        d: 'Venus',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Learn More',
-          href: 'https://science.nasa.gov/jupiter/',
-        },
-        {
-          text: 'Learn More',
-          href:
-            'https://science.nasa.gov/jupiter/',
-        },
-      ],
-    },
-    {
-      text: 'Who wrote the play "Romeo and Juliet"?',
-      answers: {
-        a: 'William Shakespeare',
-        b: 'Jane Austen',
-        c: 'Charles Dickens',
-        d: 'Mark Twin',
+        a: '10080',
+        b: '10099',
+        c: '10580',
+        d: '13005',
       },
       correct: 'a',
       selected: null,
       links: [
         {
-          text: 'Learn More',
-          href: 'https://en.wikipedia.org/wiki/William_Shakespeare',
-        },
-        {
-          text: 'Learn More',
-          href:
-            'https://en.wikipedia.org/wiki/William_Shakespeare',
+          text: 'Minutes in a week',
+          href: 'https://socratic.org/questions/how-many-minutes-are-in-1-full-week',
         },
       ],
     },
     {
-      text: 'In which year did the Titanic sink?',
+      text: 'What country drinks the most coffee per capita?',
       answers: {
-        a: '1905',
-        b: '1912',
-        c: '1920',
-        d: '1931',
+        a: 'Norway',
+        b: 'Finland',
+        c: 'Denmark',
+        d: 'Iceland',
       },
       correct: 'b',
       selected: null,
       links: [
         {
-          text: 'Learn More',
-          href: 'https://en.wikipedia.org/wiki/Titanic',
-        },
-        {
-          text: 'Learn More',
-          href:
-            'https://en.wikipedia.org/wiki/Titanic',
+          text: 'Coffee consumption',
+          href: 'https://worldpopulationreview.com/country-rankings/coffee-consumption-by-country',
         },
       ],
     },
     {
-      text: 'What is the main ingredient in guacamole?',
+      text: 'How many elements are in the periodic table?',
       answers: {
-        a: 'Tomatoes',
-        b: 'Avocado',
-        c: 'Onions',
-        d: 'Cheese',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Learn More',
-          href: 'https://www.allrecipes.com/recipe/14231/guacamole/',
-        },
-        {
-          text: 'Learn More',
-          href:
-            'https://www.allrecipes.com/recipe/14231/guacamole/',
-        },
-      ],
-    },
-    {
-      text: 'Which scientist developed the theory of general relativity?',
-      answers: {
-        a: 'Isaac Newton',
-        b: 'Marie Curie',
-        c: 'Galileo Galilei',
-        d: 'Albert Einstein',
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'Learn More',
-          href: 'https://www.nobelprize.org/prizes/physics/1921/einstein/facts/',
-        },
-        {
-          text: 'Learn More',
-          href:
-            'https://www.nobelprize.org/prizes/physics/1921/einstein/facts/',
-        },
-      ],
-    },
-    {
-      text: 'What is the largest mammal on Earth?',
-      answers: {
-        a: 'African Elephant',
-        b: 'Giraffe',
-        c: 'Blue Whale',
-        d: 'Polar Bear',
+        a: '115',
+        b: '120',
+        c: '118',
+        d: '100',
       },
       correct: 'c',
       selected: null,
       links: [
         {
-          text: 'Learn More',
-          href: 'https://ocean.si.edu/ocean-life/marine-mammals/blue-whale',
+          text: 'Periodic table',
+          href: 'https://www.acs.org/education/whatischemistry/periodictable.html#:~:text=Since%20then%2C%20the%20periodic%20table,most%20significant%20achievements%20in%20science.',
         },
+      ],
+    },
+    {
+      text: 'Who discovered that the earth revolves around the sun?',
+      answers: {
+        a: 'Isaac Newton',
+        b: 'Rosalind Franklin',
+        c: 'Galileo Galilei',
+        d: 'Nicolaus Copernicus',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
         {
-          text: 'Learn More',
-          href:
-            'https://ocean.si.edu/ocean-life/marine-mammals/blue-whale',
+          text: 'Earth info',
+          href: 'https://earthobservatory.nasa.gov/features/OrbitsHistory#:~:text=In%201515%2C%20a%20Polish%20priest,all%20planets%20circled%20the%20Sun.',
+        },
+      ],
+    },
+    {
+      text: 'What country has won the most World Cups?',
+      answers: {
+        a: 'Germany',
+        b: 'Brazil',
+        c: 'Argentina',
+        d: 'Italy',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'World cup',
+          href: 'https://www.sportingnews.com/us/soccer/news/who-has-won-most-world-cups-list-winners-men/ln2npdy5tl74pkqodlrqnpr8',
+        },
+      ],
+    },
+    {
+      text: 'In what country would you find Mount Kilimanjaro?',
+      answers: {
+        a: 'Senegal',
+        b: 'Mauritania',
+        c: 'Tanzania',
+        d: 'Burkina Faso',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'ENCYCLOPEDIC ENTRY',
+          href: 'https://education.nationalgeographic.org/resource/kilimanjaro/',
+        },
+      ],
+    },
+    {
+      text: 'What is a group of pandas known as?',
+      answers: {
+        a: 'A pack',
+        b: 'A bunch',
+        c: 'A cupboard of pandas',
+        d: 'An embarrassment',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'Panda info',
+          href: 'https://a-z-animals.com/blog/what-is-a-group-of-pandas-called/',
+        },
+      ],
+    },
+    {
+      text: 'How many bones do we have in an ear?',
+      answers: {
+        a: '1',
+        b: '2',
+        c: '3',
+        d: '4',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'Bones in the ear',
+          href: 'https://signstation.org/how-many-bones-are-in-the-ear/',
+        },
+      ],
+    },
+    {
+      text: 'Which part of web development is responsible for handling data storage and retrieval?',
+      answers: {
+        a: 'Front-end development',
+        b: 'Back-end development',
+        c: 'Full-stack development',
+        d: 'Middleware development',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'Web dev info',
+          href: 'https://www.applify.com.sg/blog/what-is-backend-in-web-development/#:~:text=The%20backend%20plays%20a%20pivotal,retrieval%2C%20and%20manipulation%20of%20data.',
         },
       ],
     },
